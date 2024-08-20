@@ -1,1 +1,2 @@
-# java-interview-questions
+1. Explain the main idea behind Java and the concept of Write Once, Run Anywhere.
+   Java is a high-level, object-oriented programming language designed to be platform-independent. Its core philosophy is encapsulated in the concept of "Write Once, Run Anywhere" (WORA), which revolutionized software development by enabling cross-platform compatibility.
