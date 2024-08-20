@@ -152,11 +152,15 @@ public class Example {
 # Strings
 
 ## Why are String immutable in Java?
-##### String are immutable in java means, once a String object is created it cannot be modified.
-##### String pool is only possible because of immutable behavior.Different String variables can refer to same object in pool.
-##### Since String is immutable, it is safe for multithreading. A single String instance can be shared across different threads.
+#### String are immutable in java means, once a String object is created it cannot be modified.
+#### String pool is only possible because of immutable behavior.Different String variables can refer to same object in pool.
+#### Since String is immutable, it is safe for multithreading. A single String instance can be shared across different threads.
 
 # Object-Oriented Concepts
+
+## Inheritance-
+Single Inheritance- 
+
 
 # Collections
 
