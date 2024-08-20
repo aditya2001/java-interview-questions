@@ -1,3 +1,5 @@
+# Java Basics
+
 ## 1. Explain the main idea behind _Java_ and the concept of _Write Once, Run Anywhere_.
 Java is platform independent ,object-oriented programming language. 
 1. Byte code - Java source code is complied into platform-independent byte code which can be executed by an JVM.
@@ -29,6 +31,7 @@ JDK includes development kit, providing everything need to for java application 
 javac: The Java compiler
 java: The Java application launcher
 
+# Java Wrapper Classes
 
 ### 4. Can you explain the difference between an int and an Integer in Java?
 
@@ -98,6 +101,8 @@ boolean isDigit = Character.isDigit('7');
 ```
 <br>
 
+## Object-Oriented Basics
+
 ## 6. Is _Java_ a pure _object-oriented language_? Why or why not?
 
 Java is **not** a pure object-oriented language. While it incorporates many object-oriented programming (OOP) principles, it retains some elements from procedural programming.
@@ -142,3 +147,10 @@ public class Example {
 }
 ```
 <br>
+
+
+
+
+
+
+
