@@ -15,7 +15,7 @@ operating environment has its own JVM.
 3. Secure - Java programs runs inside a virtual machine, therefore it's secure.
 
 
-### 3. Difference between JDK, JVM and JRE?
+## 3. Difference between JDK, JVM and JRE?
 
 JVM-
 1. JVM Interprets Java byte code into machine specific instructions
@@ -33,7 +33,7 @@ java: The Java application launcher
 
 # Java Wrapper Classes
 
-### 4. Can you explain the difference between an int and an Integer in Java?
+## 4. Can you explain the difference between an int and an Integer in Java?
 
 #### int
 - **Primitive data type**
@@ -101,7 +101,7 @@ boolean isDigit = Character.isDigit('7');
 ```
 <br>
 
-## Object-Oriented Basics
+# Object-Oriented Basics
 
 ## 6. Is _Java_ a pure _object-oriented language_? Why or why not?
 
@@ -147,6 +147,24 @@ public class Example {
 }
 ```
 <br>
+
+
+# Strings
+
+## Why are String immutable in Java?
+##### String are immutable in java means, once a String object is created it cannot be modified.
+##### String pool is only possible because of immutable behavior.Different String variables can refer to same object in pool.
+##### Since String is immutable, it is safe for multithreading. A single String instance can be shared across different threads.
+
+# Object-Oriented Concepts
+
+# Collections
+
+# Exception Handling 
+
+# MultiThreading
+
+ 
 
 
 
