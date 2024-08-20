@@ -159,27 +159,27 @@ public class Example {
 # Object-Oriented Concepts
 
 ## Inheritance-
-Single Inheritance- When a class inherits properties and behavior of only one class.
-Hierarchical Inheritance- When multiple class inherits the properties and behavior of one class, its called as Hierarchical Inheritance.
+#### Single Inheritance- When a class inherits properties and behavior of only one class.
+#### Hierarchical Inheritance- When multiple class inherits the properties and behavior of one class, its called as Hierarchical Inheritance.
 ex-
-In selenium project we have BasePage abstract class which extends multiple page classes.
+#### In selenium project we have BasePage abstract class which extends multiple page classes.
 
-Multiple Inheritance is not supported in Java, because if one class inherits same method from multiples parent class then compiler cannot decide method from which classes it needs
+#### Multiple Inheritance is not supported in Java, because if one class inherits same method from multiples parent class then compiler cannot decide method from which classes it needs
 to invoke. 
 
 ## Polymorphism- 
 Means same thing in different form.
-Method Overloading- Same method name with different number of parameters and type of parameters.
-In Selenium project we have 2 selectDropDown methods which has same but different signatures.
+#### Method Overloading- Same method name with different number of parameters and type of parameters.
+#### In Selenium project we have 2 selectDropDown methods which has same but different signatures.
 
-Method Overriding - Same method name with same signature, just the implementation changes.
+#### Method Overriding - Same method name with same signature, just the implementation changes.
 
 ## Abstraction-
 Hiding the implementation and showing only functionality to user.
-Using Abstract Class - In our selenium project we have BasePage abstract class which has common methods for all the child page classes. In this BasePage abstract 
+#### Using Abstract Class - In our selenium project we have BasePage abstract class which has common methods for all the child page classes. In this BasePage abstract 
 class we can define abstract and non-abstract methods.
 
-Interface includes only abstract methods. 100% abstraction.
+#### Interface includes only abstract methods. 100% abstraction.
 
 ## Encapsulation-
 Binding the data and methods together. Defining private variables and using public getters and setters.
