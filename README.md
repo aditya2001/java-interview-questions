@@ -245,6 +245,67 @@ Linked HashMap- LinkedHashMap is just like HashMap with an additional feature of
 <tr><td>14</td><td>public int hashCode()</td><td>returns the hashcode number for collection.</td></tr>
 </tbody></table>
 
+
+## Q. What is the difference between Array and ArrayList data-structure?
+
+* **Resizable**: Array is fixed sized array but ArrayList is dynamic sized array.
+* **Primitives**: Array can contain both primitives and objects but ArrayList can contain only object elements
+
+## Q. What is difference between HashSet and LinkedHashSet?
+
+LinkedHashSet- Maintains insertion order. The only difference between HashSet and LinkedHashSet is that LinkedHashSet maintains the **insertion order**.
+The reason why LinkedHashSet maintains insertion order is because the underlying data structure is a doubly-linked list.
+HashSet does not maintain insertion order.
+
+
+## Q. What is the difference between HashTable and HashMap?
+
+HashMap is **non synchronized**. It is not-thread safe and can't be shared between many threads without proper synchronization code.
+HashMap allows one null key and multiple null values.
+
+
+Hashtable is **synchronized**. It is thread-safe and can be shared with many threads.
+Hashtable doesn't allow any null key or value.
+
+
+
+## Q. What is the difference between Set and Map?
+
+**Sets**:-
+
+1. Set does not  allow duplicates. Set and all the classes which implements Set interface should have unique elements.
+2. Set allows single null value at most.
+3. Set does not  maintain any order; still few of its classes sort the elements in an order such as LinkedHashSet maintains the elements in insertion order.
+4. Classes used in sets are Set: HashSet, Linked HashSet, TreeSet, SortedSet etc.
+
+**Maps**:-
+
+1. Map stored the elements as key & value pair. Map doesn’t allow duplicate keys while it allows duplicate values.
+2. Map can have single null key at most and any number of null values.
+3. Set Map also doesn’t stores the elements in an order, however few of its classes does the same.
+4. Classes in Maps HashMap, TreeMap, WeakHashMap, LinkedHashMap, IdentityHashMap etc.
+
+## Q. What is the difference between HashSet and HashMap?
+
+**HashSet**:-
+
+1. HashSet class implements the Set interface
+3. HashSet does not allow duplicate elements that mean you can not store duplicate values in HashSet.
+4. HashSet permits to have a single null value.
+5. HashSet is not synchronized which means they are not suitable for thread-safe operations until unless synchronized explicitly.
+
+
+**HashMap**:-
+
+1. HashMap class implements the Map interface
+2. HashMap is used for storing key & value pairs. In short, it maintains the mapping of key & value (The HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits nulls.) This is how you could represent HashMap elements if it has integer key and value of String type: e.g. {1->”Hello”, 2->”Hi”, 3->”Bye”, 4->”Run”}
+3. HashMap does not allow duplicate keys however it allows having duplicate values.
+4. HashMap permits single null key and any number of null values.
+5. HashMap is not synchronized which means they are not suitable for thread-safe operations until unless synchronized explicitly.
+
+## Q. Tree Map?
+Tree map is used when we require key values pair in sorted ascending order.
+
 # Exception Handling 
 
 # MultiThreading
