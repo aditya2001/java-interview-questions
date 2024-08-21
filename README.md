@@ -124,65 +124,41 @@ Java supports the four main pillars of OOP:
 
 3. **Procedural Constructs**: Java supports procedural programming elements such as control flow statements (`if`, `for`, `while`, etc.).
 
-### Code Example: Mixed OOP and Non-OOP Features
-
-```java
-public class Example {
-    private int instanceVar;  // Encapsulation: private instance variable
-    public static int staticVar = 10;  // Static variable
-
-    public void instanceMethod() {
-        // Procedural construct
-        if (instanceVar > 5) {
-            System.out.println("Greater than 5");
-        }
-    }
-
-    public static void main(String[] args) {
-        int localVar = 20;  // Primitive type
-        Example obj = new Example();
-        obj.instanceMethod();  // OOP: method invocation on object
-        System.out.println(Example.staticVar);  // Accessing static member
-    }
-}
-```
-<br>
-
 
 # Strings
 
 ## Why are String immutable in Java?
-#### String are immutable in java means, once a String object is created it cannot be modified.
-#### String pool is only possible because of immutable behavior.Different String variables can refer to same object in pool.
-#### Since String is immutable, it is safe for multithreading. A single String instance can be shared across different threads.
+1. String are immutable in java means, once a String object is created it cannot be modified.
+2. String pool is only possible because of immutable behavior.Different String variables can refer to same object in pool.
+3. Since String is immutable, it is safe for multi threading. A single String instance can be shared across different threads.
 
 # Object-Oriented Concepts
 
 ## Inheritance-
-#### Single Inheritance- When a class inherits properties and behavior of only one class.
-#### Hierarchical Inheritance- When multiple class inherits the properties and behavior of one class, its called as Hierarchical Inheritance.
+1. Single Inheritance- When a class inherits properties and behavior of only one class.
+2. Hierarchical Inheritance- When multiple class inherits the properties and behavior of one class, its called as Hierarchical Inheritance.
 ex-
-#### In selenium project we have BasePage abstract class which extends multiple page classes.
+3. In selenium project we have BasePage abstract class which extends multiple page classes.
 
-#### Multiple Inheritance is not supported in Java, because if one class inherits same method from multiples parent class then compiler cannot decide method from which classes it needs
+4. Multiple Inheritance is not supported in Java, because if one class inherits same method from multiples parent class then compiler cannot decide method from which classes it needs
 to invoke. 
 
 ## Polymorphism- 
 Means same thing in different form.
-#### Method Overloading- Same method name with different number of parameters and type of parameters.
-#### In Selenium project we have 2 selectDropDown methods which has same but different signatures.
+1. Method Overloading- Same method name with different number of parameters and type of parameters.
+2. In Selenium project we have 2 selectDropDown methods which has same but different signatures.
 
-#### Method Overriding - Same method name with same signature, just the implementation changes.
+3. Method Overriding - Same method name with same signature, just the implementation changes.
 
 ## Abstraction-
 Hiding the implementation and showing only functionality to user.
-#### Using Abstract Class - In our selenium project we have BasePage abstract class which has common methods for all the child page classes. In this BasePage abstract 
+1. Using Abstract Class - In our selenium project we have BasePage abstract class which has common methods for all the child page classes. In this BasePage abstract 
 class we can define abstract and non-abstract methods.
 
-#### Interface includes only abstract methods. 100% abstraction.
+2. Interface includes only abstract methods. 100% abstraction.
 
 ## Encapsulation-
-Binding the data and methods together. Defining private variables and using public getters and setters.
+1. Binding the data and methods together. Defining private variables and using public getters and setters.
 
 
 
