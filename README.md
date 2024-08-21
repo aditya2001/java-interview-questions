@@ -206,6 +206,8 @@ The Map interface provides three collection views, which allow a map’s content
 
 Some useful classes which implement Map interface are – **ConcurrentHashMap**, **ConcurrentSkipListMap**, **EnumMap**, **HashMap**, **Hashtable**, **IdentityHashMap**, **LinkedHashMap**, **Properties**, **TreeMap** and **WeakHashMap**.
 
+![img.png](img.png)
+
 
 |           |List	|Set        |	Queue  |Map                             |
 |-----------|-------|-----------|----------|--------------------------------|
