@@ -169,6 +169,91 @@ class we can define abstract and non-abstract methods.
 
 # Collections
 
+## Q. What is Java Collections Framework? List out some benefits of Collections framework?
+
+<p align="center">
+  <img src="assets/collection.png" alt="Java Collections" width="800px" />
+</p>
+
+The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects. Java Collections can achieve all the operations that we perform on a data such as searching, sorting, insertion, manipulation, and deletion.
+
+Java Collection means a single unit of objects. Java Collection framework provides many interfaces (Set, List, Queue, Deque) and classes (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+
+**1. Collection Interface**
+
+Collection interface is at the root of the hierarchy. Collection interface provides all general purpose methods which all collections classes must support (or throw UnsupportedOperationException). It extends **Iterable** interface which adds support for iterating over collection elements using the “for-each loop” statement.
+
+**2. List**
+
+Lists represents an **ordered collection** of elements. Using lists, we can access elements by their integer index (position in the list), and search for elements in the list. index start with 0, just like an array.
+
+Some useful classes which implement List interface are – **ArrayList**, **CopyOnWriteArrayList**, **LinkedList**, **Stack** and **Vector**.
+
+**3. Set**
+
+Sets represents a collection of **sorted** elements. Sets do not allow the duplicate elements. Set interface does not provides no guarantee to return the elements in any predictable order; though some Set implementations store elements in their natural ordering and guarantee this order.
+
+Some useful classes which implement Set interface are – **ConcurrentSkipListSet**, **CopyOnWriteArraySet**, **EnumSet**, **HashSet**, **LinkedHashSet** and **TreeSet**.
+
+**4. Map**
+
+The Map interface enable us to store data in key-value pairs (keys should be immutable). A map cannot contain duplicate keys; each key can map to at most one value.
+
+The Map interface provides three collection views, which allow a map’s contents to be viewed as a set of keys, collection of values, or set of key-value mappings. Some map implementations, like the TreeMap class, make specific guarantees as to their order; others, like the HashMap class, do not.
+
+Some useful classes which implement Map interface are – **ConcurrentHashMap**, **ConcurrentSkipListMap**, **EnumMap**, **HashMap**, **Hashtable**, **IdentityHashMap**, **LinkedHashMap**, **Properties**, **TreeMap** and **WeakHashMap**.
+
+**5. Stack**
+
+The Java Stack interface represents a classical stack data structure, where elements can be pushed to last-in-first-out (LIFO) stack of objects. In Stack we push an element to the top of the stack, and popped off from the top of the stack again later.
+
+**6. Queue**
+
+A queue data structure is intended to hold the elements (put by producer threads) prior to processing by consumer thread(s). Besides basic Collection operations, queues provide additional insertion, extraction, and inspection operations.
+
+Some useful classes which implement Map interface are – **ArrayBlockingQueue, ArrayDeque, ConcurrentLinkedDeque, ConcurrentLinkedQueue, DelayQueue, LinkedBlockingDeque, LinkedBlockingQueue, LinkedList, LinkedTransferQueue, PriorityBlockingQueue, PriorityQueue and SynchronousQueue**.
+
+**7. Deque**
+
+A double ended queue (pronounced “deck“) that supports element insertion and removal at both ends. When a deque is used as a queue, FIFO (First-In-First-Out) behavior results. When a deque is used as a stack, LIFO (Last-In-First-Out) behavior results.
+
+Some common known classes implementing this interface are **ArrayDeque, ConcurrentLinkedDeque, LinkedBlockingDeque** and **LinkedList**.
+
+|           |List	|Set        |	Queue  |Map                             |
+|-----------|-------|-----------|----------|--------------------------------|
+|Order	    |Yes	|No	        |Yes	   |No                              |
+|Duplicates	|Yes	|No	        |Yes	   |No (Allow duplicate values not keys)|
+|Null Values|Yes	|Single Null|	Yes (LinkedList Queue). No (Priority Queue).|Single null key and many null values|
+
+**The Java Collections Framework provides the following benefits:**
+
+* Reduces programming effort
+* Increases program speed and quality
+* Allows interoperability among unrelated APIs
+* Reduces effort to learn and to use new APIs
+* Reduces effort to design new APIs
+* Fosters software reuse
+
+**Methods of Collection Interface**
+
+<table class="alt">
+<tbody><tr><th>No.</th><th>Method</th><th>Description</th></tr>
+<tr><td>1</td><td>public boolean add(Object element)</td><td> is used to insert an element in this collection.</td></tr>
+<tr><td>2</td><td>public boolean addAll(Collection c)</td><td>is used to insert the specified collection elements in the invoking collection.</td></tr>
+<tr><td>3</td><td>public boolean remove(Object element)</td><td>is used to delete an element from this collection.</td></tr>
+<tr><td>4</td><td>public boolean removeAll(Collection c)</td><td>is used to delete all the elements of specified collection from the invoking collection.</td></tr>
+<tr><td>5</td><td>public boolean retainAll(Collection c)</td><td>is used to delete all the elements of invoking collection except the specified collection.</td></tr>
+<tr><td>6</td><td>public int size()</td><td>return the total number of elements in the collection.</td></tr>
+<tr><td>7</td><td>public void clear()</td><td>removes the total no of element from the collection.</td></tr>
+<tr><td>8</td><td>public boolean contains(Object element)</td><td>is used to search an element.</td></tr>
+<tr><td>9</td><td>public boolean containsAll(Collection c)</td><td>is used to search the specified collection in this collection.</td></tr>
+<tr><td>10</td><td>public Iterator iterator()</td><td>returns an iterator.</td></tr>
+<tr><td>11</td><td>public Object[] toArray()</td><td>converts collection into array.</td></tr>
+<tr><td>12</td><td>public boolean isEmpty()</td><td>checks if collection is empty.</td></tr>
+<tr><td>13</td><td>public boolean equals(Object element)</td><td>matches two collection.</td></tr>
+<tr><td>14</td><td>public int hashCode()</td><td>returns the hashcode number for collection.</td></tr>
+</tbody></table>
+
 # Exception Handling 
 
 # MultiThreading
