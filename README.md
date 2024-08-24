@@ -163,10 +163,6 @@ class we can define abstract and non-abstract methods.
 
 
 
-
-
-
-
 # Collections
 
 ## Q. What is Java Collections Framework? List out some benefits of Collections framework?
