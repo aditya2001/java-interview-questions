@@ -58,6 +58,12 @@ Wrapper classes not only provide a way to convert primitives to and from objects
 
 ### Core Wrapper Classes
 
+Integer.parseInt --> While working upon strings, there are times when we need to convert a number represented as string to integer type. We can use parseInt method from Integer class. It takes string as parameter and parses it into primitive data type int.
+
+public static int parseInt(String s) throws NumberFormatException
+
+int num = Integer.parseInt(str);
+
 | Primitive | Wrapper Class | Conversion Methods | Primitive Example | Wrapper Example |
 | --- | --- | --- | --- | --- |
 | `boolean` | `Boolean` | `.valueOf()` <br> `.parseBoolean()` <br> `.booleanValue()` | `true` | `Boolean.TRUE` |
@@ -73,7 +79,7 @@ Wrapper classes not only provide a way to convert primitives to and from objects
 
 #### 1. Collections
 
-Generic collections in Java require objects, not primitives. Wrapper classes allow you to use primitives in these collections.
+Collections in Java require objects, not primitives. Wrapper classes allow you to use primitives in these collections.
 
 ```java
 List<Integer> numbers = new ArrayList<>();
@@ -162,6 +168,17 @@ class we can define abstract and non-abstract methods.
 
 
 
+## Q. What is final in Java?
+final is a keyword used in java. final for a class means it cannot be extended. Ex We have Properties class in utils package which is a final class.
+final for a variable means its value is constant and cannot be modified.
+final for method means it cannot be overridden.
+
+
+## Q. What is static in Java?
+Static means attached to the class. For example if we have a variable in a class that will have same value for all the objects, we can make it static so it be directly accessed and  that way we save memory.
+Ex 3 cars having same color as red, we can make color as static.
+static variables or methods can be directly accessed and doesn't need object creation.
+
 
 # Collections
 
@@ -194,6 +211,11 @@ A queue data structure is intended to hold the elements (put by producer threads
 
 Some useful classes which implement Map interface are – **ArrayBlockingQueue, ArrayDeque, ConcurrentLinkedDeque, ConcurrentLinkedQueue, DelayQueue, LinkedBlockingDeque, LinkedBlockingQueue, LinkedList, LinkedTransferQueue, PriorityBlockingQueue, PriorityQueue and SynchronousQueue**.
 
+### Difference between List and Set in Java?
+1. List is ordered, set is unordered.
+2. List allows duplicates, set doesn't allow duplicates.
+3. List allows null values, set allows a single null.
+
 **Map**
 
 The Map interface enable us to store data in key-value pairs (keys should be immutable). A map cannot contain duplicate keys; each key can map to at most one value.
@@ -204,13 +226,6 @@ Some useful classes which implement Map interface are – **ConcurrentHashMap**,
 
 Linked HashMap- LinkedHashMap is just like HashMap with an additional feature of maintaining an order of elements inserted into it
 ![img.png](img.png)
-
-
-|           |List	|Set        |	Queue  |Map                             |
-|-----------|-------|-----------|----------|--------------------------------|
-|Order	    |Yes	|No	        |Yes	   |No                              |
-|Duplicates	|Yes	|No	        |Yes	   |No (Allow duplicate values not keys)|
-|Null Values|Yes	|Single Null|	Yes (LinkedList Queue). No (Priority Queue).|Single null key and many null values|
 
 **The Java Collections Framework provides the following benefits:**
 
@@ -241,11 +256,50 @@ Linked HashMap- LinkedHashMap is just like HashMap with an additional feature of
 <tr><td>14</td><td>public int hashCode()</td><td>returns the hashcode number for collection.</td></tr>
 </tbody></table>
 
+## Q. Arrays or Collections?
+If you know the size and the data type of elements, you can go with Arrays. Otherwise, go with a collection as a collection can store unlimited number of elements either of the same type or different types. 
+Moreover, if you want to reduce coding effort, you can go with Collections, as it offers to use various utility methods. From the performance point of view, Array is better than a collection as utility methods take more time to execute.
 
 ## Q. What is the difference between Array and ArrayList data-structure?
 
 * **Resizable**: Array is fixed sized array but ArrayList is dynamic sized array.
 * **Primitives**: Array can contain both primitives and objects but ArrayList can contain only object elements
+
+```java
+public class ArrayHomogenous {
+    public static void main(String args[]){
+int[] arr =new int[5];//declaration and instantiation
+// boolean[] boolArr = { true, true, false, true };
+// char[] charArr = { 'g', 'e', 'e', 'k', 's' };        
+arr[0]=10;//initialization
+arr[1]=20;
+        for(int i=0;i<arr.length;i++)//length is the property of array
+            System.out.println(arr[i]);
+    }}
+```
+```java
+public class ArrayListHomogeneousAndHeterogeneous {
+    public static void main(String[] args) {
+        ArrayList myNumbers = new ArrayList();
+        myNumbers.add("10");
+        myNumbers.add(15);
+        myNumbers.add(20);
+        for (Object i : myNumbers) {
+            System.out.println(i);
+        }
+    }
+}
+```
+
+## Q. Homogeneous and Heterogeneous?
+Homogeneous: A homogeneous collection in Java contains elements of the same type. For example, an array or a list declared to hold integers (int[], ArrayList<Integer>) is homogeneous because all its elements are of type int or Integer.
+int[] numbers = {1, 2, 3, 4, 5};
+
+List<Integer> ls = new ArrayList<>();
+
+Heterogeneous: A heterogeneous collection in Java can contain elements of different types. This is typically achieved using the common ancestor type of all potential elements (like Object), allowing different types of objects to be stored in the same collection.
+
+Object[] mixedArray = {1, "two", 3.0, true};
 
 ## Q. What is difference between HashSet and LinkedHashSet?
 
@@ -302,9 +356,24 @@ Hashtable doesn't allow any null key or value.
 ## Q. Tree Map?
 Tree map is used when we require key values pair in sorted ascending order.
 
+## Q. What is the difference between Collection & Collections ?
+
+“Collection” is an interface. If we want to represent a group of individual objects as a single entity, then we should go for Collection.
+
+“Collections” is an utility class present in java.util package to define several utility methods for Collection objects (like sorting, searching, etc).
+
+## Q. Call by value and call by reference?
+Call by value- If we call a method by passing the value in the method parameter, this is known as call by value. This does not change original value, just a copy of value is sent to the method.
+
+
+## Q. Garbage Collections?
+Garbage collection is a mechanism where JVM deletes unreferenced objects from memory and it runs finalize method before running this process.
+
+## Q. Upcasting and Downcasting in Java?
+
 # Exception Handling 
 
-# MultiThreading
+
 
  
 
