@@ -133,7 +133,7 @@ Java supports the four main pillars of OOP:
 
 # Strings
 
-## Why are String immutable in Java?
+## 7. Why are String immutable in Java?
 1. String are immutable in java means, once a String object is created it cannot be modified.
 2. String pool is only possible because of immutable behavior.Different String variables can refer to same object in pool.
 3. Since String is immutable, it is safe for multi threading. A single String instance can be shared across different threads.
@@ -168,14 +168,14 @@ class we can define abstract and non-abstract methods.
 
 
 
-## Q. What is final in Java?
+## 8. What is final in Java?
 final is a keyword used in java. 
 1. final for a class means it cannot be extended. Ex We have Properties class in utils package which is a final class.
 2. final for a variable means its value is constant and cannot be modified.
 3. final for method means it cannot be overridden.
 
 
-## Q. What is static in Java?
+## 9. What is static in Java?
 Static means attached to the class. For example if we have a variable in a class that will have same value for all the objects, we can make it static so it be directly accessed and  that way we save memory.
 Ex 3 cars having same color as red, we can make color as static.
 static variables or methods can be directly accessed and doesn't need object creation.
@@ -183,7 +183,7 @@ static variables or methods can be directly accessed and doesn't need object cre
 
 # Collections
 
-## Q. What is Java Collections Framework? List out some benefits of Collections framework?
+## 10. What is Java Collections Framework? List out some benefits of Collections framework?
 
 
 The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects. Java Collections can achieve all the operations that we perform on a data such as searching, sorting, insertion, manipulation, and deletion.
@@ -212,7 +212,7 @@ A queue data structure is intended to hold the elements (put by producer threads
 
 Some useful classes which implement Map interface are – **ArrayBlockingQueue, ArrayDeque, ConcurrentLinkedDeque, ConcurrentLinkedQueue, DelayQueue, LinkedBlockingDeque, LinkedBlockingQueue, LinkedList, LinkedTransferQueue, PriorityBlockingQueue, PriorityQueue and SynchronousQueue**.
 
-### Difference between List and Set in Java?
+## 11. Difference between List and Set in Java?
 1. List is ordered, set is unordered.
 2. List allows duplicates, set doesn't allow duplicates.
 3. List allows null values, set allows a single null.
@@ -257,11 +257,11 @@ Linked HashMap- LinkedHashMap is just like HashMap with an additional feature of
 <tr><td>14</td><td>public int hashCode()</td><td>returns the hashcode number for collection.</td></tr>
 </tbody></table>
 
-## Q. Arrays or Collections?
+## 12. Arrays or Collections?
 If you know the size and the data type of elements, you can go with Arrays. Otherwise, go with a collection as a collection can store unlimited number of elements either of the same type or different types. 
 Moreover, if you want to reduce coding effort, you can go with Collections, as it offers to use various utility methods. From the performance point of view, Array is better than a collection as utility methods take more time to execute.
 
-## Q. What is the difference between Array and ArrayList data-structure?
+## 13. What is the difference between Array and ArrayList data-structure?
 
 * **Resizable**: Array is fixed sized array but ArrayList is dynamic sized array.
 * **Primitives**: Array can contain both primitives and objects but ArrayList can contain only object elements
@@ -292,7 +292,7 @@ public class ArrayListHomogeneousAndHeterogeneous {
 }
 ```
 
-## Q. Homogeneous and Heterogeneous?
+## 14. Homogeneous and Heterogeneous?
 Homogeneous: A homogeneous collection in Java contains elements of the same type. For example, an array or a list declared to hold integers (int[], ArrayList<Integer>) is homogeneous because all its elements are of type int or Integer.
 ```java
 int[] numbers = {1, 2, 3, 4, 5};
@@ -310,14 +310,14 @@ myNumbers.add(20);
 
 
 
-## Q. What is difference between HashSet and LinkedHashSet?
+## 15. What is difference between HashSet and LinkedHashSet?
 
 LinkedHashSet- Maintains insertion order. The only difference between HashSet and LinkedHashSet is that LinkedHashSet maintains the **insertion order**.
 The reason why LinkedHashSet maintains insertion order is because the underlying data structure is a doubly-linked list.
 HashSet does not maintain insertion order.
 
 
-## Q. What is the difference between HashTable and HashMap?
+## 16. What is the difference between HashTable and HashMap?
 
 HashMap is **non synchronized**. It is not-thread safe and can't be shared between many threads without proper synchronization code.
 HashMap allows one null key and multiple null values.
@@ -328,7 +328,7 @@ Hashtable doesn't allow any null key or value.
 
 
 
-## Q. What is the difference between Set and Map?
+## 17. What is the difference between Set and Map?
 
 **Set**:-
 
@@ -344,7 +344,7 @@ Hashtable doesn't allow any null key or value.
 3. Set Map also doesn’t stores the elements in an order, however few of its classes does the same.
 4. Classes in Maps HashMap, TreeMap, WeakHashMap, LinkedHashMap, IdentityHashMap etc.
 
-## Q. What is the difference between HashSet and HashMap?
+## 18. What is the difference between HashSet and HashMap?
 
 **HashSet**:-
 
@@ -362,23 +362,23 @@ Hashtable doesn't allow any null key or value.
 4. HashMap permits single null key and any number of null values.
 5. HashMap is not synchronized which means they are not suitable for thread-safe operations until unless synchronized explicitly.
 
-## Q. Tree Map?
+## 19. Tree Map?
 Tree map is used when we require key values pair in sorted ascending order.
 
-## Q. What is the difference between Collection & Collections ?
+## 20. What is the difference between Collection & Collections ?
 
 “Collection” is an interface. If we want to represent a group of individual objects as a single entity, then we should go for Collection.
 
 “Collections” is an utility class present in java.util package to define several utility methods for Collection objects (like sorting, searching, etc).
 
-## Q. Call by value and call by reference?
+## 21. Call by value and call by reference?
 Call by value- If we call a method by passing the value in the method parameter, this is known as call by value. This does not change original value, just a copy of value is sent to the method.
 
 
-## Q. Garbage Collections?
+## 22. Garbage Collections?
 Garbage collection is a mechanism where JVM deletes unreferenced objects from memory and it runs finalize method before running this process.
 
-## Q. Upcasting and Down casting in Java?
+## 23. Upcasting and Down casting in Java?
 Parent to child is upcasting
 
 Child to parent is downcasting
