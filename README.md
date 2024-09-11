@@ -169,9 +169,10 @@ class we can define abstract and non-abstract methods.
 
 
 ## Q. What is final in Java?
-final is a keyword used in java. final for a class means it cannot be extended. Ex We have Properties class in utils package which is a final class.
-final for a variable means its value is constant and cannot be modified.
-final for method means it cannot be overridden.
+final is a keyword used in java. 
+1. final for a class means it cannot be extended. Ex We have Properties class in utils package which is a final class.
+2. final for a variable means its value is constant and cannot be modified.
+3. final for method means it cannot be overridden.
 
 
 ## Q. What is static in Java?
@@ -293,13 +294,21 @@ public class ArrayListHomogeneousAndHeterogeneous {
 
 ## Q. Homogeneous and Heterogeneous?
 Homogeneous: A homogeneous collection in Java contains elements of the same type. For example, an array or a list declared to hold integers (int[], ArrayList<Integer>) is homogeneous because all its elements are of type int or Integer.
+```java
 int[] numbers = {1, 2, 3, 4, 5};
-
 List<Integer> ls = new ArrayList<>();
+Object[] mixedArray = {1, "two", 3.0, true};
+```
 
 Heterogeneous: A heterogeneous collection in Java can contain elements of different types. This is typically achieved using the common ancestor type of all potential elements (like Object), allowing different types of objects to be stored in the same collection.
+```java
+ArrayList myNumbers = new ArrayList();
+myNumbers.add("10");
+myNumbers.add(15);
+myNumbers.add(20);
+```
 
-Object[] mixedArray = {1, "two", 3.0, true};
+
 
 ## Q. What is difference between HashSet and LinkedHashSet?
 
@@ -321,14 +330,14 @@ Hashtable doesn't allow any null key or value.
 
 ## Q. What is the difference between Set and Map?
 
-**Sets**:-
+**Set**:-
 
 1. Set does not  allow duplicates. Set and all the classes which implements Set interface should have unique elements.
 2. Set allows single null value at most.
 3. Set does not  maintain any order; still few of its classes sort the elements in an order such as LinkedHashSet maintains the elements in insertion order.
 4. Classes used in sets are Set: HashSet, Linked HashSet, TreeSet, SortedSet etc.
 
-**Maps**:-
+**Map**:-
 
 1. Map stored the elements as key & value pair. Map doesn’t allow duplicate keys while it allows duplicate values.
 2. Map can have single null key at most and any number of null values.
@@ -369,9 +378,30 @@ Call by value- If we call a method by passing the value in the method parameter,
 ## Q. Garbage Collections?
 Garbage collection is a mechanism where JVM deletes unreferenced objects from memory and it runs finalize method before running this process.
 
-## Q. Upcasting and Downcasting in Java?
+## Q. Upcasting and Down casting in Java?
+Parent to child is upcasting
+
+Child to parent is downcasting
+
+Parent p = new Child(): 
+
+This type of initialization is used to access only the members present in the parent class and the methods which are overridden in the child class. 
+Upcasting supports polymorphism.
 
 # Exception Handling 
+An Exception is an event that disrupts the normal flow of the program.
+Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+
+![img_1.png](img_1.png)
+
+There are 2 main types of exception-
+1. Checked Exception - Compile time exception are known as checked exceptions. IO and SQL
+2. Unchecked Exception - Run time exception like arithmetic exception, null pointer exception and all.
+
+![img_2.png](img_2.png)
+
+
+
 
 
 
