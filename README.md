@@ -31,6 +31,24 @@ JDK includes development kit, providing everything need to for java application 
 javac: The Java compiler
 java: The Java application launcher
 
+## 5. Different data types in java?
+There are 2 data types in java. Primitive data type and non primitive data type in java.
+
+![img_5.png](img_5.png)
+
+
+## 5. Difference between Heap and Stack Memory?
+
+Stack Memory -> When we write a program, then all variables, methods and object reference are stored in stack memory.
+Heap Memory -> When we create an object, the object is stored in heap memory and reference is stored in stack.
+The object is created at run time and heap memory is available for run time things. Heap memory is like a big storage.
+
+
+## 6. Difference between instance variables and local variables?
+
+Instance variables -> are variables declared outside the method but inside the class.These variables belong to object and we access them using object creation.
+Local Variables -> are variables present inside block, method or constructor and its access is limited within them.
+
 # Java Wrapper Classes
 
 ## 4. Can you explain the difference between an int and an Integer in Java?
@@ -385,12 +403,17 @@ Child to parent is downcasting
 
 Parent p = new Child(): 
 
-This type of initialization is used to access only the members present in the parent class and the methods which are overridden in the child class. 
+Upcasting involves assigning superclass reference variable to child class object.This helps to access parent clas members and overridden methods of child class.
 Upcasting supports polymorphism.
 
 # Exception Handling 
 An Exception is an event that disrupts the normal flow of the program.
 Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+
+Benefits-
+1. Prevents program crashes.
+2. Provides info about error.
+3. Allows to recover from errors.
 
 ![img_1.png](img_1.png)
 
@@ -399,6 +422,69 @@ There are 2 main types of exception-
 2. Unchecked Exception - Run time exception like arithmetic exception, null pointer exception and all.
 
 ![img_2.png](img_2.png)
+
+## 24. How can you create custom exception
+
+```java
+public class MyException extends Exception{
+ private String message;
+ public MyException(String message){
+     super(message);
+     this.message = message;
+ }
+ public String getMessage(){
+     return message;
+ }
+}
+```
+
+# MultiThreading
+
+## 25. What is multithreading in Java?
+Multithreading is a programming concept that allows multiple task to be executed at the same time. In Java multithreading is 
+implemented using Thread class.
+
+## 26. How does Synchronization work in Java?
+Synchronization in Java is a mechanism that allows multiple threads to access shared resource safely.This prevents the race condition
+where two or more threads are trying to access the same resource at the same time.
+There are 2 ways to synchronize in java-
+1. Using Synchronized methods
+
+A synchronized method is a method that can only be executed by one thread at a time. To declare a method as synchronized you need to use synchronized keyword.
+
+
+## 37. Why is Synchronization necessary?
+When a particular resource is shared between multiple threads, situation may arise when multiple threads require same shared resource.
+Synchronization helps in resolving this issue by allowing only single thread to access the resource at a time.
+
+Without Synchronization
+```java
+public class Counting{
+    private int increase_counter;
+    public int increase(){
+        increase_counter = increase_counter + 1;
+        return increase_counter;
+    }
+}
+```
+If thread1 view count as 10, it will increase to 11. Simultaneously thread2 views count as 10, it will increase to 11.This inconsistency is caused because of this.
+
+![img_3.png](img_3.png)
+
+With Synchronization
+
+```java
+public class Counting{
+    private int increase_counter;
+    public Synchronized int increase(){
+        increase_counter = increase_counter + 1;
+        return increase_counter;
+    }
+}
+```
+
+![img_4.png](img_4.png)
+
 
 
 
