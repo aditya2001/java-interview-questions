@@ -244,7 +244,10 @@ The Map interface provides three collection views, which allow a map’s content
 Some useful classes which implement Map interface are – **ConcurrentHashMap**, **ConcurrentSkipListMap**, **EnumMap**, **HashMap**, **Hashtable**, **IdentityHashMap**, **LinkedHashMap**, **Properties**, **TreeMap** and **WeakHashMap**.
 
 Linked HashMap- LinkedHashMap is just like HashMap with an additional feature of maintaining an order of elements inserted into it
-![img.png](img.png)
+![img_6.png](img_6.png)
+
+![img_7.png](img_7.png)
+
 
 **The Java Collections Framework provides the following benefits:**
 
