@@ -347,6 +347,7 @@ HashMap allows one null key and multiple null values.
 Hashtable is **synchronized**. It is thread-safe and can be shared with many threads.
 Hashtable doesn't allow any null key or value.
 
+![img_8.png](img_8.png)
 
 
 ## 17. What is the difference between Set and Map?
