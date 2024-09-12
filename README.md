@@ -31,7 +31,7 @@ JDK includes development kit, providing everything need to for java application 
 javac: The Java compiler
 java: The Java application launcher
 
-## 5. Different data types in java?
+## 4. Different data types in java?
 There are 2 data types in java. Primitive data type and non primitive data type in java.
 
 ![img_5.png](img_5.png)
@@ -49,9 +49,28 @@ The object is created at run time and heap memory is available for run time thin
 Instance variables -> are variables declared outside the method but inside the class.These variables belong to object and we access them using object creation.
 Local Variables -> are variables present inside block, method or constructor and its access is limited within them.
 
+
+## 7. What is the significance of using super to call a constructor from a super class with parameters.
+Using super(parameters) ensures that super class constructors is called with necessary parameters, initializing inherited fields.
+
+
+## 8. How does this assist in resolving conflicts between instance variables and method parameters in a class?
+This keyword refers to current class instance variables and is used to differentiate local variables and instance variables when they have same name.
+
+## 9. What is the role of abstract class in defining a common structure for multiple classes?
+Abstract class defines common methods, providing a base that multiple other classes and extend and use.
+
+## 10. How does method overloading helps in writing more flexible and reusable test methods?
+Method overloading allows multiple methods with same name but different no and type pf parameters, therefor making it more flexible and reusable.
+
+## 11. What is th significance of using interface to define common set of methods for test classes?
+Interface defines a common set of methods that test classes should implement, ensuring a standardized approach.
+Interface must define a contract that multiple class should adhere.
+
+## 12. 
 # Java Wrapper Classes
 
-## 4. Can you explain the difference between an int and an Integer in Java?
+## 13. Can you explain the difference between an int and an Integer in Java?
 
 #### int
 - **Primitive data type**
@@ -68,7 +87,7 @@ Local Variables -> are variables present inside block, method or constructor and
 - Default value: `null` (if not assigned)
 - Performance: Slightly slower due to object overhead
 
-## 5. What are _wrapper classes_ in _Java_?
+## 14. What are _wrapper classes_ in _Java_?
 
 **Wrapper classes** in Java allow you to work with primitive data types as objects. They are particularly useful when working with generic collections or when using features that require objects, such as **Java Bean properties**.
 
@@ -127,7 +146,7 @@ boolean isDigit = Character.isDigit('7');
 
 # Object-Oriented Basics
 
-## 6. Is _Java_ a pure _object-oriented language_? Why or why not?
+## 15. Is _Java_ a pure _object-oriented language_? Why or why not?
 
 Java is **not** a pure object-oriented language. While it incorporates many object-oriented programming (OOP) principles, it retains some elements from procedural programming.
 
@@ -151,7 +170,7 @@ Java supports the four main pillars of OOP:
 
 # Strings
 
-## 7. Why are String immutable in Java?
+## 16. Why are String immutable in Java?
 1. String are immutable in java means, once a String object is created it cannot be modified.
 2. String pool is only possible because of immutable behavior.Different String variables can refer to same object in pool.
 3. Since String is immutable, it is safe for multi threading. A single String instance can be shared across different threads.
@@ -186,14 +205,14 @@ class we can define abstract and non-abstract methods.
 
 
 
-## 8. What is final in Java?
+## 17. What is final in Java?
 final is a keyword used in java. 
 1. final for a class means it cannot be extended. Ex We have Properties class in utils package which is a final class.
 2. final for a variable means its value is constant and cannot be modified.
 3. final for method means it cannot be overridden.
 
 
-## 9. What is static in Java?
+## 18. What is static in Java?
 Static means attached to the class. For example if we have a variable in a class that will have same value for all the objects, we can make it static so it be directly accessed and  that way we save memory.
 Ex 3 cars having same color as red, we can make color as static.
 static variables or methods can be directly accessed and doesn't need object creation.
@@ -201,7 +220,7 @@ static variables or methods can be directly accessed and doesn't need object cre
 
 # Collections
 
-## 10. What is Java Collections Framework? List out some benefits of Collections framework?
+## 19. What is Java Collections Framework? List out some benefits of Collections framework?
 
 
 The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects. Java Collections can achieve all the operations that we perform on a data such as searching, sorting, insertion, manipulation, and deletion.
@@ -230,7 +249,7 @@ A queue data structure is intended to hold the elements (put by producer threads
 
 Some useful classes which implement Map interface are – **ArrayBlockingQueue, ArrayDeque, ConcurrentLinkedDeque, ConcurrentLinkedQueue, DelayQueue, LinkedBlockingDeque, LinkedBlockingQueue, LinkedList, LinkedTransferQueue, PriorityBlockingQueue, PriorityQueue and SynchronousQueue**.
 
-## 11. Difference between List and Set in Java?
+## 20. Difference between List and Set in Java?
 1. List is ordered, set is unordered.
 2. List allows duplicates, set doesn't allow duplicates.
 3. List allows null values, set allows a single null.
@@ -278,11 +297,11 @@ Linked HashMap- LinkedHashMap is just like HashMap with an additional feature of
 <tr><td>14</td><td>public int hashCode()</td><td>returns the hashcode number for collection.</td></tr>
 </tbody></table>
 
-## 12. Arrays or Collections?
+## 21. Arrays or Collections?
 If you know the size and the data type of elements, you can go with Arrays. Otherwise, go with a collection as a collection can store unlimited number of elements either of the same type or different types. 
 Moreover, if you want to reduce coding effort, you can go with Collections, as it offers to use various utility methods. From the performance point of view, Array is better than a collection as utility methods take more time to execute.
 
-## 13. What is the difference between Array and ArrayList data-structure?
+## 22. What is the difference between Array and ArrayList data-structure?
 
 * **Resizable**: Array is fixed sized array but ArrayList is dynamic sized array.
 * **Primitives**: Array can contain both primitives and objects but ArrayList can contain only object elements
@@ -313,7 +332,7 @@ public class ArrayListHomogeneousAndHeterogeneous {
 }
 ```
 
-## 14. Homogeneous and Heterogeneous?
+## 23. Homogeneous and Heterogeneous?
 Homogeneous: A homogeneous collection in Java contains elements of the same type. For example, an array or a list declared to hold integers (int[], ArrayList<Integer>) is homogeneous because all its elements are of type int or Integer.
 ```java
 int[] numbers = {1, 2, 3, 4, 5};
@@ -331,14 +350,14 @@ myNumbers.add(20);
 
 
 
-## 15. What is difference between HashSet and LinkedHashSet?
+## 24. What is difference between HashSet and LinkedHashSet?
 
 LinkedHashSet- Maintains insertion order. The only difference between HashSet and LinkedHashSet is that LinkedHashSet maintains the **insertion order**.
 The reason why LinkedHashSet maintains insertion order is because the underlying data structure is a doubly-linked list.
 HashSet does not maintain insertion order.
 
 
-## 16. What is the difference between HashTable and HashMap?
+## 25. What is the difference between HashTable and HashMap?
 
 HashMap is **non synchronized**. It is not-thread safe and can't be shared between many threads without proper synchronization code.
 HashMap allows one null key and multiple null values.
@@ -350,7 +369,7 @@ Hashtable doesn't allow any null key or value.
 ![img_8.png](img_8.png)
 
 
-## 17. What is the difference between Set and Map?
+## 26. What is the difference between Set and Map?
 
 **Set**:-
 
@@ -366,7 +385,7 @@ Hashtable doesn't allow any null key or value.
 3. Set Map also doesn’t stores the elements in an order, however few of its classes does the same.
 4. Classes in Maps HashMap, TreeMap, WeakHashMap, LinkedHashMap, IdentityHashMap etc.
 
-## 18. What is the difference between HashSet and HashMap?
+## 27. What is the difference between HashSet and HashMap?
 
 **HashSet**:-
 
@@ -384,23 +403,23 @@ Hashtable doesn't allow any null key or value.
 4. HashMap permits single null key and any number of null values.
 5. HashMap is not synchronized which means they are not suitable for thread-safe operations until unless synchronized explicitly.
 
-## 19. Tree Map?
+## 28. Tree Map?
 Tree map is used when we require key values pair in sorted ascending order.
 
-## 20. What is the difference between Collection & Collections ?
+## 29. What is the difference between Collection & Collections ?
 
 “Collection” is an interface. If we want to represent a group of individual objects as a single entity, then we should go for Collection.
 
 “Collections” is an utility class present in java.util package to define several utility methods for Collection objects (like sorting, searching, etc).
 
-## 21. Call by value and call by reference?
+## 30. Call by value and call by reference?
 Call by value- If we call a method by passing the value in the method parameter, this is known as call by value. This does not change original value, just a copy of value is sent to the method.
 
 
-## 22. Garbage Collections?
+## 31. Garbage Collections?
 Garbage collection is a mechanism where JVM deletes unreferenced objects from memory and it runs finalize method before running this process.
 
-## 23. Upcasting and Down casting in Java?
+## 32. Upcasting and Down casting in Java?
 Parent to child is upcasting
 
 Child to parent is downcasting
@@ -427,7 +446,7 @@ There are 2 main types of exception-
 
 ![img_2.png](img_2.png)
 
-## 24. How can you create custom exception
+## 33. How can you create custom exception
 
 ```java
 public class MyException extends Exception{
@@ -444,11 +463,11 @@ public class MyException extends Exception{
 
 # MultiThreading
 
-## 25. What is multithreading in Java?
+## 34. What is multithreading in Java?
 Multithreading is a programming concept that allows multiple task to be executed at the same time. In Java multithreading is 
 implemented using Thread class.
 
-## 26. How does Synchronization work in Java?
+## 35. How does Synchronization work in Java?
 Synchronization in Java is a mechanism that allows multiple threads to access shared resource safely.This prevents the race condition
 where two or more threads are trying to access the same resource at the same time.
 There are 2 ways to synchronize in java-
@@ -457,7 +476,7 @@ There are 2 ways to synchronize in java-
 A synchronized method is a method that can only be executed by one thread at a time. To declare a method as synchronized you need to use synchronized keyword.
 
 
-## 37. Why is Synchronization necessary?
+## 36. Why is Synchronization necessary?
 When a particular resource is shared between multiple threads, situation may arise when multiple threads require same shared resource.
 Synchronization helps in resolving this issue by allowing only single thread to access the resource at a time.
 
