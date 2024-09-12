@@ -508,7 +508,44 @@ public class Counting{
 
 ![img_4.png](img_4.png)
 
+## 37. Static block in Java
+a static block is a set of instructions that is run only once when a class is loaded into memory.
+In out automation framework we have PropertyUtils class which has a static block to read the config file and store the values in a static map object to be used in another parts of the programs. like username, password and other configuration details.
+This static block is called as soon as the class in loaded, even before the main method.
 
+```java
+public class PropertyUtils {
+    private static Properties property= new Properties();
+    private static final Map<String, String> configMap= new HashMap<>();
+    static {
+      try {
+          FileInputStream file = new FileInputStream(FrameworkConstants.getConfigFilePath());
+          property.load(file);
+          for (Map.Entry<Object, Object> entry : property.entrySet()) {
+              configMap.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()).trim()); //remove the trailing and leading spaces
+          }
+      }
+          catch(Exception e){
+          }
+      }
+    }
+    
+```
+## 38. How to create an object if we have private constructor in the class?
+Private constructor job is restrict object creation outside the class. We can create object inside the class.
+
+## 38. Map interview questions
+
+## 39. Internal working of map in java
+
+## 40. Singleton Design Pattern
+1. Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the Java Virtual Machine.To achieve this we create a private constructor in the class.
+2. The singleton class must provide a global access point to get the instance of the class.
+We create a public static getInstance method to provide access to object.
+
+In our automation framework we have created a thread-safe singleton class. We have made global access method synchronized so that only one thread can execute this method at a time.
+
+This design pattern can be used for driver objects.
 
 
 
