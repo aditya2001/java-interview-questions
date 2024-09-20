@@ -543,17 +543,42 @@ Private constructor job is restrict object creation outside the class. We can cr
 2. The singleton class must provide a global access point to get the instance of the class.
 We create a public static getInstance method to provide access to object.
 
-In our automation framework we have created a thread-safe singleton class. We have made global access method synchronized so that only one thread can execute this method at a time.
+In our automation framework we have created a thread-safe singleton class. We have created an instance of Thread Local class to make driver variable thread safe. 
 
-This design pattern can be used for driver objects.
+This design pattern can be used for driver objects as only one object is required per thread.
+
+## 41. Difference between String and String Builder ?
+`String` is immutable, creating new objects for modifications, consuming memory and slowing execution.
+`StringBuilder` is mutable, making it efficient for frequent concatenation, string modification, and large string construction. It reduces execution time by avoiding unnecessary object creation during concatenation and dynamic memory allocation for large strings.
+
+#### String in Java:
+`Immutable`: In Java, a String is an immutable object. This means that once a String object is created, its content cannot be changed. Any operation that seems to modify a String actually creates a new String object with the modified content, leaving the original String unchanged.
+```java
+String str1 = "Hello";
+String str2 = str1.concat(", World"); // Creates a new String
+System.out.println(str1); // Output: Hello
+System.out.println(str2); // Output: Hello, World
+```
+
+`Memory Allocation`: When you perform operations on a String, such as concatenation or substring extraction, it often leads to the creation of new String objects. This behavior can consume additional memory.
+`Efficiency for Concatenation`: If you concatenate multiple strings in a loop using + or concat(), it can lead to poor performance due to the creation of multiple intermediate String objects.
 
 
+ #### String Builder in Java
 
+`Mutable`: StringBuilder in Java is designed to be mutable. It allows you to modify the contents of the string without creating new String objects. The modifications are done in the same memory location, making it more memory-efficient.
 
+```java
+StringBuilder stringBuilder = new StringBuilder("Hello");
+stringBuilder.append(", World"); // Modifies the StringBuilder in place
+String result = stringBuilder.toString(); // Converts to String
+System.out.println(result); // Output: Hello, World
+```
 
- 
+`Memory Allocation`: StringBuilder dynamically allocates memory as needed to accommodate the modified string content. It doesn't create new objects for each modification, reducing memory overhead.
+`Efficiency for Concatenation`: If you need to concatenate or modify strings frequently, StringBuilder is much more efficient than using + or concat() because it avoids the creation of unnecessary String objects.
 
-
+In conclusion, when it comes to concatenation or modification operations, StringBuilder demonstrates significantly faster performance compared to the String class. Modifying a String results in the creation of a new object in heap memory, which can lead to performance inefficiencies. In contrast, the StringBuilder class is well-suited for modifying string content without generating additional objects in memory. This makes it the ideal choice for efficient string manipulation
 
 
 
