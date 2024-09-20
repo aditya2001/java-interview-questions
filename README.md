@@ -537,6 +537,32 @@ Private constructor job is restrict object creation outside the class. We can cr
 ## 38. Map interview questions
 
 ## 39. Internal working of map in java
+In the following example, we want to insert three (Key, Value) pair in the HashMap.
+```java
+HashMap<String, Integer> map = new HashMap<>();  
+map.put("Adi", 19);  
+map.put("Mona", 29);  
+map.put("Divisha", 39);
+```
+When we call the put() method, then it calculates the hash code of the Key "Adi." Suppose the hash code of "Aman" is 2657860. To store the Key in memory, we have to calculate the index.
+
+Index = hashcode(Key) & (n-1)
+
+Index = 2657860 & (16-1) = 4
+
+The value 4 is the computed index value where the Key and value will store in HashMap.
+
+`get() method in HashMap`-
+get() method is used to get the value by its Key. It will not fetch the value if you don't know the Key
+
+`hashCode()`: This is the method of the object class. It returns the memory reference of the object in integer form.
+
+`Hashing`: When you insert a key-value pair into the HashMap, Java computes the hash code of the key using the hashCode() method. The hash code is then used to determine the index (bucket) where the key-value pair will be stored in the array.
+
+Internally HashMap maintains a bucket array, with initial capacity as 16. Each index in the array can hold multiple node objects using LinkedList.As shown above, it is possible that multiple keys may produce the hash that maps them into a single bucket. This is why, the Map entries are stored as LinkedList.
+
+![img_9.png](img_9.png)
+
 
 ## 40. Singleton Design Pattern
 1. Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the Java Virtual Machine.To achieve this we create a private constructor in the class.
