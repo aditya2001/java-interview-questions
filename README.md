@@ -39,15 +39,15 @@ There are 2 data types in java. Primitive data type and non primitive data type 
 
 ## 5. Difference between Heap and Stack Memory?
 
-Stack Memory -> When we write a program, then all variables, methods and object reference are stored in stack memory.
-Heap Memory -> When we create an object, the object is stored in heap memory and reference is stored in stack.
+1. Stack Memory -> When we write a program, then all variables, methods and object reference are stored in stack memory.
+2. Heap Memory -> When we create an object, the object is stored in heap memory and reference is stored in stack.
 The object is created at run time and heap memory is available for run time things. Heap memory is like a big storage.
 
 
 ## 6. Difference between instance variables and local variables?
 
-Instance variables -> are variables declared outside the method but inside the class.These variables belong to object and we access them using object creation.
-Local Variables -> are variables present inside block, method or constructor and its access is limited within them.
+1. Instance variables -> are variables declared outside the method but inside the class.These variables belong to object and we access them using object creation.
+2. Local Variables -> are variables present inside block, method or constructor and its access is limited within them.
 
 
 ## 7. What is the significance of using super to call a constructor from a super class with parameters.
@@ -217,6 +217,11 @@ Static means attached to the class. For example if we have a variable in a class
 Ex 3 cars having same color as red, we can make color as static.
 static variables or methods can be directly accessed and doesn't need object creation.
 
+we have propertiesUtil.java, where we have static map variable as the url, username and password will be same for all the test.
+
+static methods-
+1. Methods should not be static if they are using instance variables.
+2. If methods are not using instance variables then they can be static.
 
 # Collections
 
@@ -446,28 +451,70 @@ There are 2 main types of exception-
 
 ![img_2.png](img_2.png)
 
-## 33. How can you create custom exception
+## 33. Difference between throw and throws keyword?
+Throw is used to deliberately throw an exception whereas throws is used to declare an exception.
+Throws will not prevent from occurring exception because we are just declaring.
+
+## 34. How to handle exception in java?
+Using try catch block as it will prevent exception from occurring.
+
+## 35. How can you create custom exception
 
 ```java
-public class MyException extends Exception{
- private String message;
- public MyException(String message){
-     super(message);
-     this.message = message;
- }
- public String getMessage(){
-     return message;
- }
+
+//A Class that represents use-defined exception
+class MyException extends Exception{
+    public MyException(String msg){
+        // Call constructor of parent Exception
+        super(msg);
+    }
 }
+
+// A Class that uses above MyException
+public class TestClass {
+    // Driver Program
+    public static void main(String args[]){
+        try{
+            // Throw an object of user defined exception
+            throw new MyException("Throwing my exception");
+        }catch (MyException ex){
+            // Print the message from MyException object
+            System.out.println(ex.getMessage());
+        }
+    }
+}
+```
+
+Readable and self-explanatory--
+
+
+Custom exception allows you to define your own exception classes for specific situations.
+These exceptions can be designed to provide more descriptive messages.
+By creating custom exceptions with meaningful names, you can make your test code more readable and self-explanatory. This helps in quickly identifying the nature of failures when reviewing test reports or logs.
+
+if(!homePage.isDisplayed()){
+ throw new MyException("Failed");
+}
+
+```java
+try {
+    FileInputStream file = new FileInputStream(FrameworkConstants.getConfigFilePath());
+    property.load(file);
+    for (Map.Entry<Object, Object> entry : property.entrySet()) {
+    CONFIGMAP.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()).trim()); //remove the trailing and leading spaces
+    }
+    //property.entrySet().forEach(entry ->CONFIGMAP.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()));
+     } catch (Exception e ) {
+    throw new PropertyFileException("Please check the Path of the config.properties file");
 ```
 
 # MultiThreading
 
-## 34. What is multithreading in Java?
+## 36. What is multithreading in Java?
 Multithreading is a programming concept that allows multiple task to be executed at the same time. In Java multithreading is 
 implemented using Thread class.
 
-## 35. How does Synchronization work in Java?
+## 37. How does Synchronization work in Java?
 Synchronization in Java is a mechanism that allows multiple threads to access shared resource safely.This prevents the race condition
 where two or more threads are trying to access the same resource at the same time.
 There are 2 ways to synchronize in java-
@@ -476,7 +523,7 @@ There are 2 ways to synchronize in java-
 A synchronized method is a method that can only be executed by one thread at a time. To declare a method as synchronized you need to use synchronized keyword.
 
 
-## 36. Why is Synchronization necessary?
+## 38. Why is Synchronization necessary?
 When a particular resource is shared between multiple threads, situation may arise when multiple threads require same shared resource.
 Synchronization helps in resolving this issue by allowing only single thread to access the resource at a time.
 
@@ -508,7 +555,7 @@ public class Counting{
 
 ![img_4.png](img_4.png)
 
-## 37. Static block in Java
+## 39. Static block in Java
 a static block is a set of instructions that is run only once when a class is loaded into memory.
 In out automation framework we have PropertyUtils class which has a static block to read the config file and store the values in a static map object to be used in another parts of the programs. like username, password and other configuration details.
 This static block is called as soon as the class in loaded, even before the main method.
@@ -531,12 +578,12 @@ public class PropertyUtils {
     }
     
 ```
-## 38. How to create an object if we have private constructor in the class?
+## 40. How to create an object if we have private constructor in the class?
 Private constructor job is restrict object creation outside the class. We can create object inside the class.
 
-## 38. Map interview questions
+## 41. Map interview questions
 
-## 39. Internal working of map in java
+## 42. Internal working of map in java
 In the following example, we want to insert three (Key, Value) pair in the HashMap.
 ```java
 HashMap<String, Integer> map = new HashMap<>();  
@@ -564,16 +611,28 @@ Internally HashMap maintains a bucket array, with initial capacity as 16. Each i
 ![img_9.png](img_9.png)
 
 
-## 40. Singleton Design Pattern
+## 43. Singleton Design Pattern
 1. Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the Java Virtual Machine.To achieve this we create a private constructor in the class.
 2. The singleton class must provide a global access point to get the instance of the class.
-We create a public static getInstance method to provide access to object.
+I have created a public static getInstance method to provide access to object.
 
-In our automation framework we have created a thread-safe singleton class. We have created an instance of Thread Local class to make driver variable thread safe. 
+In our automation framework I have created a thread-safe singleton class. I have created an instance of Thread Local class to make driver variable thread safe. 
 
 This design pattern can be used for driver objects as only one object is required per thread.
+```java
+// This is a thread-safe singleton class and we have made global access method synchronized so that only one thread can execute this method at a time.
+private static ThreadLocal<WebDriver> tldriver = new ThreadLocal<>();
 
-## 41. Difference between String and String Builder ?
+public static synchronized WebDriver getInstance() {
+    if (tldriver.get() == null) {
+        throw new RuntimeException("Exception occurred in getting webdriver instance");
+    }
+    return tldriver.get();
+}
+```
+
+
+## 44. Difference between String and String Builder ?
 `String` is immutable, creating new objects for modifications, consuming memory and slowing execution.
 `StringBuilder` is mutable, making it efficient for frequent concatenation, string modification, and large string construction. It reduces execution time by avoiding unnecessary object creation during concatenation and dynamic memory allocation for large strings.
 
@@ -606,6 +665,38 @@ System.out.println(result); // Output: Hello, World
 
 In conclusion, when it comes to concatenation or modification operations, StringBuilder demonstrates significantly faster performance compared to the String class. Modifying a String results in the creation of a new object in heap memory, which can lead to performance inefficiencies. In contrast, the StringBuilder class is well-suited for modifying string content without generating additional objects in memory. This makes it the ideal choice for efficient string manipulation
 
+## 45. Why abstract class is allowed to have constructor?
+The main purpose of constructor is to initialize the object. In abstract class we have, instance variable, abstract methods, non-abstract methods.
+We need to initialize the instance variable which is inherited to child class and therefore we need a constructore for that purpose.
+
+## 46. What is lambda expressions in Java?
+A lambda expression is a short block of code which takes in parameters and returns a value. Lambda expressions are similar to methods, but they do not need a name, and they can be implemented right in the body of a method.
+```java
+(parameter1, parameter2) -> expression
+
+public class HashMapInitialization {
+ public static void main(String[] args) {
+  Map<String, Integer> hm = new HashMap<>();
+  hm.put("key1", 1);
+  hm.put("key2", 2);
+  hm.put("key3", 3);
+
+  Map<String, Integer> map = new HashMap<>();
+  hm.forEach((key, value) -> map.put(key, value));
+
+  System.out.println(map);
+ }
+}
+```
+
+```java
+List<WebElement> links = driver.findElements(By.tagName("a"));
+
+links.forEach(link -> System.out.println(link.getText()));
+```
+
+
+## 47. Java streams?
 
 
 
